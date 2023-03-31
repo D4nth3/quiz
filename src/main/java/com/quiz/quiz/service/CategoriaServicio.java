@@ -9,7 +9,7 @@ public interface CategoriaServicio {
 
     public Categoria guardarCategoria(Categoria categoria);
 
-    public Categoria obtenerCategoriaPorCodigo(Long id);
+    public Categoria obtenerCategoriaPorId(Long id);
 
     public Categoria actualizarCategoria(Categoria categoria);
 

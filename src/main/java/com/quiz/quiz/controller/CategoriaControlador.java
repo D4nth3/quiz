@@ -37,19 +37,19 @@ public class CategoriaControlador {
 
     @GetMapping("/categorias/editar/{id}")
     public String mostrarFormularioEditarCategoria(@PathVariable Long id, Model modelo){
-        modelo.addAttribute("categoria", servicio.obtenerCategoriaPorCodigo(id));
+        modelo.addAttribute("categoria", servicio.obtenerCategoriaPorId(id));
         return "editar_categoria";
     }
 
     @PostMapping("/categorias/{id}")
     public String actualizarCategoria(@PathVariable Long id, @ModelAttribute("categoria") Categoria categoria, Model modelo){
-        Categoria categoriaExistente = servicio.obtenerCategoriaPorCodigo(id);
+        Categoria categoriaExistente = servicio.obtenerCategoriaPorId(id);
         categoriaExistente.setId(id);
         categoriaExistente.setNombreProducto(categoria.getNombreProducto());
         categoriaExistente.setDescripcion(categoria.getDescripcion());
 
         servicio.actualizarCategoria(categoriaExistente);
-        return "redirect:categorias";
+        return "redirect:/categorias";
     }
 
     @GetMapping("/categorias/{id}")

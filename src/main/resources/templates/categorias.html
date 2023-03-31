@@ -41,10 +41,10 @@
       </thead>
       <tbody>
       <tr th:each="categoria : ${categorias}">
-        <td th:text="${categoria.nombreProdcuto}">Nombre producto</td>
+        <td th:text="${categoria.nombreProducto}">Nombre producto</td>
         <td th:text="${categoria.descripcion}">Descripcion</td>
         <td>
-          <a th:href="@{/categorias}/editar/{id}(id=${categoria.id})" class="btn btn-info">Editar</a>
+          <a th:href="@{/categorias/editar/{id}(id=${categoria.id})}" class="btn btn-info">Editar</a>
           <a th:href="@{/categorias/{id}(id=${categoria.id})}" class="btn btn-danger">Eliminar</a>
         </td>
       </tr>

@@ -21,7 +21,7 @@ public class CategoriaServicioImpl implements CategoriaServicio{
         return repositorio.save(categoria);
     }
     @Override
-    public Categoria obtenerCategoriaPorCodigo(Long id) {
+    public Categoria obtenerCategoriaPorId(Long id) {
         return repositorio.findById(id).get();
     }
     @Override
@@ -31,6 +31,6 @@ public class CategoriaServicioImpl implements CategoriaServicio{
     @Override
     public void eliminarCategoria(Long id) {
         repositorio.deleteById(id);
-    }  
+    }
     
 }
